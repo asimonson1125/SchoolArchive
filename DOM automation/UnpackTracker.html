@@ -1,0 +1,290 @@
+cardsPerPack = 3;
+
+var regular = [0, 0, 0, 0, 0];
+var foil = [0, 0, 0, 0, 0];
+var recipes = [0, 0, 0, 0, 0];
+
+var output = document.createElement("div");
+var outputT = document.createTextNode("Results: ");
+var url = window.location.href;
+output.appendChild(outputT);
+document.body.appendChild(output);
+output.style.position = "fixed";
+output.style.zIndex = "100000";
+output.style.right = "100px";
+output.style.bottom = "100px";
+output.style.height = "90px";
+output.style.width = "90px";
+output.style.padding = "10px";
+output.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+output.style.fontFamily = "Rokkitt";
+output.style.color = "#222";
+
+
+function readCard(card) {
+	if (card.getElementsByClassName('card  sc-gFaPwZ lejYrj').length == 1) { // Regular
+	    try {
+			cards = card.getElementsByClassName('sc-gPWkxV ebJUIh');
+			if (cards[cards.length-1].textContent == "Common card") { // Two spaces for whatever reason
+				regular[0] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].textContent);
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV entVfb');
+			if (cards[cards.length-1].textContent == "Uncommon card") {
+				regular[1] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].textContent);
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV bIPjxb');
+			if (cards[cards.length-1].textContent == "Rare card") {
+				regular[2] += 1;
+			}
+			else if (cards[cards.length-1].textContent == "Rare recipe") {
+				recipes[2] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].textContent);
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV bGGhGS');
+			if (cards[cards.length-1].textContent == "Epic card") {
+				regular[3] += 1;
+			}
+			else if (cards[cards.length-1].textContent == "Epic recipe") {
+				recipes[3] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].textContent);
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV kGkxOe');
+			if (cards[cards.length-1].textContent == "Legendary card") {
+				regular[4] += 1;
+			}
+			else if (cards[cards.length-1].textContent == "Legendary recipe") {
+				recipes[4] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].textContent);
+			}
+		}
+		catch(err) { void(0); }
+    }
+	else if (card.getElementsByClassName('card  sc-gFaPwZ cDmwYl').length == 1) { // Foil
+	    try {
+			cards = card.getElementsByClassName('sc-gPWkxV ebJUIh');
+			if (cards[cards.length-1].textContent == "Common card") {
+				foil[0] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].textContent);
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV entVfb');
+			if (cards[cards.length-1].textContent == "Uncommon card") {
+				foil[1] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].textContent);
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV bIPjxb');
+			if (cards[cards.length-1].textContent == "Rare card") {
+				foil[2] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].textContent);
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV bGGhGS');
+			if (cards[cards.length-1].textContent == "Epic card") {
+				foil[3] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].textContent);
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV kGkxOe');
+			if (cards[cards.length-1].textContent == "Legendary card") {
+				foil[4] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].textContent);
+			}
+		}
+		catch(err) { void(0); }
+	}
+	output.innerHTML = "Results:<br>";
+	output.innerHTML += regular + "<br>";
+	output.innerHTML += foil + "<br>";
+	output.innerHTML += recipes;
+}
+
+function readEquip(card) {
+	if (card.getElementsByClassName('card  sc-gFaPwZ lejYrj').length == 1) { // Regular
+	    try {
+			cards = card.getElementsByClassName('sc-gPWkxV ebJUIh');
+			if (cards[cards.length-1].innerHTML.substring(92) == "Common  equipment") { // Two spaces for whatever reason
+				regular[0] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].innerHTML.substring(92));
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV entVfb');
+			if (cards[cards.length-1].innerHTML.substring(92) == "Uncommon  equipment") {
+				regular[1] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].innerHTML.substring(92));
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV bIPjxb');
+			if (cards[cards.length-1].innerHTML.substring(92) == "Rare  equipment") {
+				regular[2] += 1;
+			}
+			else if (cards[cards.length-1].innerHTML.substring(92) == "Rare  recipe") {
+				recipes[2] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].innerHTML.substring(92));
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV bGGhGS');
+			if (cards[cards.length-1].innerHTML.substring(92) == "Epic  equipment") {
+				regular[3] += 1;
+			}
+			else if (cards[cards.length-1].innerHTML.substring(92) == "Epic  recipe") {
+				recipes[3] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].innerHTML.substring(92));
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV kGkxOe');
+			if (cards[cards.length-1].innerHTML.substring(92) == "Legendary  equipment") {
+				regular[4] += 1;
+			}
+			else if (cards[cards.length-1].innerHTML.substring(92) == "Legendary  recipe") {
+				recipes[4] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].innerHTML.substring(92));
+			}
+		}
+		catch(err) { void(0); }
+    }
+	else if (card.getElementsByClassName('card  sc-gFaPwZ cDmwYl').length == 1) { // Foil
+	    try {
+			cards = card.getElementsByClassName('sc-gPWkxV ebJUIh');
+			if (cards[cards.length-1].innerHTML.substring(92) == "Common  equipment") {
+				foil[0] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].innerHTML.substring(92));
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV entVfb');
+			if (cards[cards.length-1].innerHTML.substring(92) == "Uncommon  equipment") {
+				foil[1] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].innerHTML.substring(92));
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV bIPjxb');
+			if (cards[cards.length-1].innerHTML.substring(92) == "Rare  equipment") {
+				foil[2] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].innerHTML.substring(92));
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV bGGhGS');
+			if (cards[cards.length-1].innerHTML.substring(92) == "Epic  equipment") {
+				foil[3] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].innerHTML.substring(92));
+			}
+		}
+		catch(err) { void(0); }
+		try {
+			cards = card.getElementsByClassName('sc-gPWkxV kGkxOe');
+			if (cards[cards.length-1].innerHTML.substring(92) == "Legendary  equipment") {
+				foil[4] += 1;
+			}
+			else {
+				console.log(cards[cards.length-1].innerHTML.substring(92));
+			}
+		}
+		catch(err) { void(0); }
+	}
+	output.innerHTML = "Results:<br>";
+	output.innerHTML += regular + "<br>";
+	output.innerHTML += foil + "<br>";
+	output.innerHTML += recipes;
+}
+
+function unbox() {
+	equips = document.getElementsByClassName('sc-eopZyb iThVJr');
+	for (var i = 0; i < cardsPerPack; i++) {
+        if(url == 'https://app.nationsgame.net/card-packs'){
+            readCard(equips[i]);
+        }
+        else if(url == 'https://app.nationsgame.net/loot-crates'){
+            readEquip(equips[i]);
+        }
+	}
+}
+
+function addTrigger() {
+	close = document.getElementsByClassName('sc-ifAKCX faVmmo');
+	close[0].setAttribute('onclick', 'unbox()');
+	console.log('added');
+	close[0].style.backgroundColor = 'red';
+}
+
+function results() {
+	console.log(regular);
+	console.log(foil);
+	console.log(recipes);
+
+}
+
+setInterval(addTrigger, 50);
