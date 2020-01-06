@@ -1,9 +1,11 @@
 import java.util.Scanner;
-
 import static java.lang.Integer.parseInt;
+import java.util.Random;
+
 
 class Main {
     public static void main(String[] args) {
+        Random rand = new Random();
         boolean encode = false;
         System.out.println("Welcome to the MMME (Multistage Math Message Encoder)");
         System.out.println();
@@ -41,11 +43,19 @@ class Main {
         if(encode){
             System.out.println("Please enter what you wish to encode in the next line.");
             while(in.length() < 1){
-                in = input.nextLine();
+                in = input.nextLine().toLowerCase();
             }
+            encode encoder = new encode();
+            int previousInt = 1;
+            long tester;
             for(int i = 0; i < in.length(); i++){
-                encode encoder = new encode();
-                output += encoder.encodeLetter(in.substring(i,i+1));
+                previousInt = encoder.encodeLetter(previousInt, in.substring(i,i+1));
+                output += Integer.toString(previousInt);
+                output += " ";
+                tester = previousInt;
+                if(tester * 45 < 2000000000){
+                    previousInt = rand.nextInt(50) + 1;
+                }
             }
             System.out.println(output);
         }
@@ -54,7 +64,9 @@ class Main {
             while(in.length() < 1){
                 in = input.nextLine();
             }
-            in += " ";
+            if(!(in.substring(in.length()-1).equals(" "))){
+                in += " ";
+            }
             int previousSpace = -1;
             decode decoder = new decode();
             int previousNum = 100000000;
