@@ -1,6 +1,7 @@
 public class encode {
-    int encodeLetter(int previous, String letter){
-        return(multiplierList(letter)*previous);
+    int encodeLetter(int previous, int charNum, String letter){
+        int multiplier = (charNum % 10) + 1;
+        return(multiplierList(letter)*previous*multiplier);
     }
 
     int multiplierList (String letter){

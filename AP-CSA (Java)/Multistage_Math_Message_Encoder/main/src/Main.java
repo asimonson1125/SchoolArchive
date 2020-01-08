@@ -49,12 +49,14 @@ class Main {
             int previousInt = 1;
             long tester;
             for(int i = 0; i < in.length(); i++){
-                previousInt = encoder.encodeLetter(previousInt, in.substring(i,i+1));
+                previousInt = encoder.encodeLetter(previousInt, i, in.substring(i,i+1));
                 output += Integer.toString(previousInt);
                 output += " ";
                 tester = previousInt;
-                if(tester * 45 < 2000000000){
+                if(tester * 450 < 2000000000){
                     previousInt = rand.nextInt(50) + 1;
+                    output += Integer.toString(previousInt);
+                    output += " ";
                 }
             }
             System.out.println(output);
@@ -81,7 +83,7 @@ class Main {
                         System.out.println("the encoded message should only contain numbers and spaces! Shutting down due to error now.");
                         System.exit(0);
                     }
-                    output += decoder.decodeNumber(previousNum, newNum);
+                    output += decoder.decodeNumber(previousNum, i, newNum);
                     previousNum = newNum;
                     previousSpace = i;
                 }
