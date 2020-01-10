@@ -86,13 +86,13 @@ class Main {
                         System.out.println("the encoded message should only contain numbers and spaces! Shutting down due to error now.");
                         System.exit(0);
                     }
-                    if(previousNum == 100000000){
+                    if(previousNum > newNum){
                         previousNum = newNum;
                     }
                     else {
-                        numOfSpaces++;
                         output += decoder.decodeNumber(previousNum, numOfSpaces, newNum);
                         previousNum = newNum;
+                        numOfSpaces++;
                     }
                     previousSpace = i;
                 }

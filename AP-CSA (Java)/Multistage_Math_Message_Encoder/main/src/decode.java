@@ -1,6 +1,6 @@
 public class decode {
     String decodeNumber(int previousNum, int charNum, int currentNum) {
-        int divide = charNum % 10;
+        int divide = (charNum % 10) + 1;
         int num = currentNum/divide/previousNum;
         return(quotientList(Integer.toString(num)));
     }
