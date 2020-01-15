@@ -7,6 +7,8 @@ var recipes = [0, 0, 0, 0, 0];
 var output = document.createElement("div");
 var outputT = document.createTextNode("Results: ");
 var url = window.location.href;
+var skipCount = 0;
+var timeStarted, timeNow;
 output.appendChild(outputT);
 document.body.appendChild(output);
 output.style.position = "fixed";
@@ -295,10 +297,16 @@ function sleep(ms) { //make wait function
 
 while(document.getElementsByClassName('sc-eopZyb iThVJr') != undefined){ //while there are at least 5 cards left
     for(i = 5; i > 0; i--){
+	timeStarted = new Date();
+        timeNow = new Date();
         document.querySelector(`div:nth-child(${i}) > div.sc-gJWqzi.lgCjDF > button`).click();
-        while(document.getElementsByClassName('sc-eopZyb iThVJr').length == 0){ // wait until pack appears
+        while(document.getElementsByClassName('sc-eopZyb iThVJr').length == 0 && timeNow - timeStarted < 5000){ // wait until pack appears (or 5 seconds elapsed)
+	    timeNow = new Date();
             await sleep(10);
         }
+        if(timeNow - timeStarted >= 5000){
+	    skipCount += 1;
+        }											       
         document.querySelector("div.sc-ifAKCX.faVmmo").click();
         await sleep(1000);
     }
@@ -306,9 +314,16 @@ while(document.getElementsByClassName('sc-eopZyb iThVJr') != undefined){ //while
 
 while(document.querySelector(`div:nth-child(1) > div.sc-gJWqzi.lgCjDF > button`) != undefined){
     document.querySelector(`div:nth-child(1) > div.sc-gJWqzi.lgCjDF > button`).click();
-    while(document.getElementsByClassName('sc-eopZyb iThVJr').length == 0){ // wait until close button appears
+    timeStarted = new Date();
+    timeNow = new Date();
+    while(document.getElementsByClassName('sc-eopZyb iThVJr').length == 0 && timeNow - timeStarted < 5000){ // wait until pack appears (or 5 seconds elapsed)
+	timeNow = new Date();
         await sleep(100);
+    }
+    if(timeNow - timeStarted >= 5000){
+	skipCount += 1;
     }
     document.querySelector("div.sc-ifAKCX.faVmmo").click();
     await sleep(1000);
-}					 
+}
+console.log(`${skipCount} packs skipped`);													   
