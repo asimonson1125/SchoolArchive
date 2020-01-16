@@ -16,6 +16,15 @@ public class TesterClass
        System.out.println();
        System.out.println();
        System.out.println(p2.toString());
+       
+       p2.setName("John");
+       p2.setAge(29);
+       p2.setType("thing");
+       p2.setWeight(420.69);
+       p2.setBreed("shiba bitchu");
+       System.out.println();
+       System.out.println();
+       System.out.println(p2.toString());
 
    }
  }
@@ -74,5 +83,24 @@ class Pet
         return(name + ":  " + " This " + breed + " " + type + " is " + age + " years old and weighs " + weight + " lbs.");
     }
     
+    public void setName(String init){
+        name = init;
+    }
+    
+    public void setAge(int init){
+        age = init;
+    }
+    
+    public void setType(String init){
+        type = init;
+    }
+    
+    public void setWeight(double init){
+        weight = init;
+    }
+    
+    public void setBreed(String init){
+        breed = init;
+    }
+    
 }
-
