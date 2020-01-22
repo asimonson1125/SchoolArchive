@@ -3,13 +3,13 @@ public class Song
 {
   // Create method(s) with parameters to print out verses
   // of the song The Ants Go Marching.
-  public void repeat(String num){
+  public static void repeat(String num){
       System.out.println("The ants go marching "+num+" by "+num+", hurrah, hurrah");
       System.out.println("The ants go marching "+num+" by "+num+", hurrah, hurrah");
       System.out.println("The ants go marching "+num+" by "+num+",");
   }
     
-  public void ender(){
+  public static void ender(){
       System.out.println("And they all go marching down to the ground");
       System.out.println();
   }
@@ -18,21 +18,17 @@ public class Song
   {
     // Create a Song object and call its method to print out
     // the verses of The Ants Go Marching
-      Song ants = new Song();
-      ants.repeat("one");
+      Song.repeat("one");
       System.out.println("The little one stops to suck his thumb");
-      ants.ender();
+      Song.ender();
       
-      ants.repeat("two");
+      Song.repeat("two");
       System.out.println("The little one stops to tie his shoe");
-      ants.ender();
+      Song.ender();
       
-      ants.repeat("three");
+      Song.repeat("three");
       System.out.println("The little one stops to climb a tree");
-      ants.ender();
+      Song.ender();
       
-      
-
   }
 }
-
