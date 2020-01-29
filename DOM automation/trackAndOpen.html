@@ -266,10 +266,10 @@ function readEquip(card) {
 function unbox() {
 	equips = document.getElementsByClassName('sc-eopZyb iThVJr');
 	for (var i = 0; i < cardsPerPack; i++) {
-        if(url == 'https://app.nationsgame.net/card-packs'){
+        if(url == 'rem'){
             readCard(equips[i]);
         }
-        else if(url == 'https://app.nationsgame.net/loot-crates'){
+        else if(url == 'rem'){
             readEquip(equips[i]);
         }
 	}
