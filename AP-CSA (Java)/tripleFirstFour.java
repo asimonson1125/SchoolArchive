@@ -1,4 +1,4 @@
-//for runestone 6.1 
+//for runestone 6.2 
 
 
 public class ArrayWorker
