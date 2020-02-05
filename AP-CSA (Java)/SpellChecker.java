@@ -18,8 +18,8 @@ public class SpellChecker
     * Return false if it is not found.
     */
         public boolean spellcheck(String word){
-            for(int i = 0; i < dictionary.length; i++){
-                if(word == dictionary[i]){
+            for(String i : dictionary){
+                if(word == i){
                     return true;
                 }
             }
@@ -45,4 +45,5 @@ public class SpellChecker
      // checker.printStartsWith("ab");
    }
 }
+
 
