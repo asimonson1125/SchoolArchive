@@ -459,7 +459,302 @@ public String withoutX2(String str)  {
  } 
  
  
- 
+//array-1
+public boolean firstLast6(int[] nums) {
+  if(nums[0] == 6 || nums[nums.length -1] == 6){
+    return true;
+  }
+  return false;
+}
+
+
+public boolean sameFirstLast(int[] nums) {
+  if(nums.length >= 1 && nums[0] == nums[nums.length-1]){
+    return true;
+  }
+  return false;
+}
+
+
+public int[] makePi() {
+  
+  int rere[]= {3,1,4};
+  return rere;
+}
+
+
+public boolean commonEnd(int[] a, int[] b) {
+  if(a[0] == b[0] || a[a.length-1] == b[b.length-1]){
+    return true;
+  }
+  return false;
+}
+
+
+public int sum3(int[] nums) {
+  return nums[0] + nums[1] + nums[2];
+}
+
+
+public int[] rotateLeft3(int[] nums) {
+  int rere[] = {nums[1],nums[2],nums[0]};
+  return rere;
+}
+
+
+public int[] reverse3(int[] nums) {
+  int rere[] = {0,0,0};
+  for(int i = 2; i>=0; i--){
+    rere[i] = nums[2-i];
+  }
+  return rere;
+}
+
+
+public int[] maxEnd3(int[] nums) {
+  int max = nums[0];
+  if(nums[2] > max){
+    max = nums[2];
+  }
+  int rere[] = {max,max,max};
+  return rere;
+}
+
+
+public int sum2(int[] nums) {
+  if(nums.length<2){
+    int numbor = 0;
+    for(int i : nums){
+      numbor += i;
+    }
+    return numbor;
+  }
+  return nums[0]+nums[1];
+}
+
+
+public int[] middleWay(int[] a, int[] b) {
+  int rere[] = {a[1],b[1]};
+  return rere;
+}
+
+
+public int[] makeEnds(int[] nums) {
+  int rere[] = {nums[0],nums[nums.length - 1]};
+  return rere;
+}
+
+
+public boolean has23(int[] nums) {
+  for(int i : nums){
+    if(i == 2 || i==3){
+      return true;
+    }
+  }
+  return false;
+}
+
+
+public boolean no23(int[] nums) {
+  for(int i : nums){
+    if(i == 2 || i == 3){
+      return false;
+    }
+  }
+  return true;
+}
+
+
+public int[] makeLast(int[] nums) {
+  int lenny = nums.length * 2;
+  int rere[] = new int[lenny];
+  rere[lenny-1] = nums[nums.length-1];
+  return rere;
+}
+
+
+public boolean double23(int[] nums) {
+  boolean sec = false;
+  boolean thir = false;
+  for(int i : nums){
+    if(i == 2){
+      if(sec){
+        return true;
+      }
+      sec = true;
+    }
+    if(i==3){
+      if(thir){
+        return true;
+      }
+      thir = true;
+    }
+  }
+  return false;
+}
+
+
+public int[] fix23(int[] nums) {
+  int rere[] = nums;
+  for(int i = 0; i < nums.length; i++){
+    if(nums[i] == 2){
+      if(nums[i+1] == 3){
+        rere[i+1] = 0;
+      }
+    }
+  }
+  return rere;
+}
+
+
+public int start1(int[] a, int[] b) {
+  int egg = 0;
+  if(a.length > 0 && a[0] == 1){
+    egg++;
+  }
+  if(b.length > 0 && b[0] == 1){
+    egg++;
+  }
+  return egg;
+}
+
+
+public int[] biggerTwo(int[] a, int[] b) {
+  int atard = 0;
+  int btard = 0;
+  for(int i : a){
+    atard += i;
+  }
+  for(int i : b){
+    btard += i;
+  }
+  if(atard>=btard){
+    return a;
+  }
+  return b;
+}
+
+
+public int[] makeMiddle(int[] nums) {
+  int split = nums.length/2;
+  int rere[] = {nums[split-1], nums[split]};
+  return rere;
+}
+
+
+public int[] plusTwo(int[] a, int[] b) {
+  int rere[] = new int[4];
+  for(int i=0; i < a.length; i++){
+    rere[i] = a[i];
+  }
+  for(int i=0; i < b.length; i++){
+    rere[i+2] = b[i];
+  }
+  return rere;
+}
+
+
+public int[] swapEnds(int[] nums) {
+  int e[] = new int[nums.length];
+  for(int i=0; i< nums.length; i++){
+    e[i] = nums[i];
+  }
+  e[e.length-1] = nums[0];
+  e[0] = nums[nums.length-1];
+  
+  return e;
+}
+
+
+public int[] midThree(int[] nums) {
+  int split = nums.length/2;
+  int rere[] = {nums[split-1],nums[split],nums[split+1]};
+  return rere;
+}
+
+
+public int maxTriple(int[] nums) {
+  int egg = nums[0];
+  if(nums[nums.length-1] > egg){
+    egg = nums[nums.length-1];
+  }
+  if(nums[nums.length/2] > egg){
+    egg = nums[nums.length/2];
+  }
+  return egg;
+}
+
+
+public int[] frontPiece(int[] nums) {
+  if(nums.length<2){
+    return nums;
+  }
+  int rere[] = {nums[0],nums[1]};
+  return rere;
+}
+
+
+public boolean unlucky1(int[] nums) {
+  if(nums.length > 1 && nums[1] == 1){
+    if(nums.length > 2 && nums[2] == 3){
+      return true;
+    }
+  }
+  else if (nums.length > 1 && nums[1] == 3){
+    if(nums[0] == 1){
+      return true;
+    }
+  }
+  if(nums.length > 2 && nums[nums.length-2] == 1 && nums[nums.length-1] == 3){
+    return true;
+  }
+  return false;
+}
+
+
+public int[] make2(int[] a, int[] b) {
+  int lenny = a.length;
+  int rere[] = new int[2];
+  if(lenny>=2){
+    rere[0] = a[0];
+    rere[1] = a[1];
+  }
+  else if (lenny == 1){
+    rere[0] = a[0];
+    rere[1] = b[0];
+  }
+  else {
+    rere[0] = b[0];
+    rere[1] = b[1];
+  }
+  return rere;
+}
+
+
+public int[] front11(int[] a, int[] b) {
+  if(a.length < 1 || b.length < 1){
+    if(a.length < 1){
+      if(b.length < 1){
+        int rere[] = new int[0];
+        return rere;
+      }
+      else{
+        int rere[] = {b[0]};
+        return rere;
+      }
+    }
+    else {
+      int rere[] = {a[0]};
+      return rere;
+    }
+  }
+  else{
+    int rere[] = {a[0],b[0]};
+    return rere;
+  }
+}
+
+
 //logic-1 
  
 public boolean cigarParty(int cigars, boolean isWeekend)  { 
