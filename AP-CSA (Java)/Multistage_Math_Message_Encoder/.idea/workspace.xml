@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5634d47e-70f3-4c41-a2a3-c8dda98b35f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/decode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/decode.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +31,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../NG-Rolls-Simulator" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -141,6 +140,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="540" y="181" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1578245245927" />
+    <state x="739" y="268" key="FileChooserDialogImpl" timestamp="1586129993093">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="739" y="268" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1586129993093" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1578624005515">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -161,14 +164,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="440" y="100" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1578249650120" />
-    <state x="661" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1578622728317">
+    <state x="661" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1586129822999">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="661" y="350" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1578622728317" />
-    <state x="343" y="146" key="new project wizard" timestamp="1578252694586">
+    <state x="661" y="350" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1586129822999" />
+    <state x="343" y="146" key="new project wizard" timestamp="1586130075902">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="343" y="146" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1578252694586" />
+    <state x="343" y="146" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1586130075902" />
     <state x="616" y="243" width="672" height="677" key="run.anything.popup" timestamp="1578249727836">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
