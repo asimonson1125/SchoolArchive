@@ -13,10 +13,11 @@
 
 (async function () {
     'use strict';
+    let noShop = true;
     while (true) {
         await sleep(100);
-        if (document.querySelector("div.sc-eGMfeR.iMmzoX > span:nth-child(2) > div > div > div") != null){
-            document.querySelector("div.sc-eGMfeR.iMmzoX > span:nth-child(2) > div > div > div").click();//NEXT QUESTION
+        if (document.querySelector("div.sc-eGMfeR.iMmzoX > span:nth-child(2) > div > div > div") != null && noShop){
+            document.querySelector("div.sc-eGMfeR.iMmzoX > span:nth-child(2) > div > div > div").click(); //NEXT QUESTION
             await sleep(200);
         }
         else{
