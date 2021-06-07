@@ -3,6 +3,8 @@
 
 // Do whatever with it lol
 
+let a = "";
 document.querySelector("div > svg > g > path").__data__.forEach(function (x) {
-    console.log(x.y * -1);
+    a += (x.y * -1) + "\n";
 });
+console.log(a);
